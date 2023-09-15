@@ -36,6 +36,7 @@ define python::pyvenv (
   Python::Venv::PipVersion    $pip_version = 'latest',
 ) {
   include python
+  include python::install::venv
 
   if $ensure == 'present' {
     $python_version = $version ? {
